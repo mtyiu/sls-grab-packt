@@ -1,0 +1,11 @@
+service: sls-grab-packt
+provider:
+  name: aws
+  runtime: nodejs4.3
+  cfLogs: true
+  timeout: 60
+functions:
+  handler:
+    handler: handler.handler
+    events:
+      - schedule: rate(1 day)
